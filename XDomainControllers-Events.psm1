@@ -1,6 +1,7 @@
 ﻿<#
 Import-Module XDomainControllers-Events -force
 gcm -Module XDomainControllers-Events
+Get-Xhunt-Lockout | Export-Csv -Path C:\Temp\Lockoutevent.csv -NoTypeInformation
 #>
 Function Get-Xhunt-Ntlm {
   $getadcs = (Get-ADGroupMember 'Domain Controllers').Name
