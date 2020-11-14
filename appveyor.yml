@@ -5,7 +5,7 @@
   os: WMF 5
   install:
     - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
-    - ps: Import-Module XDomainControllers-Events
+    - ps: Import-Module .\XDomainControllers-Events.psd1
   
   environment:
     #MySecureVar:
@@ -17,18 +17,18 @@
   #---------------------------------# 
   build_script: 
     - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
-    - ps: Import-Module XDomainControllers-Events
+    - ps: Import-Module .\XDomainControllers-Events.psd1
   
   #---------------------------------# 
   #      test configuration         # 
   #---------------------------------# 
   test_script: 
     - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
-    - ps: Import-Module XDomainControllers-Events
+    - ps: Import-Module .\XDomainControllers-Events.psd1
   
   #---------------------------------# 
   #      deployment configuration   # 
   #---------------------------------# 
   deploy_script: 
     - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
-    - ps: Import-Module XDomainControllers-Events
+    - ps: Import-Module .\XDomainControllers-Events.psd1
