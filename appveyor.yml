@@ -1,0 +1,30 @@
+  #---------------------------------# 
+  #      environment configuration  # 
+  #---------------------------------# 
+  version: 1.1.{build}
+  os: WMF 5
+  install:
+    - ps: Import-Module XDomainControllers-Events
+  
+  environment:
+    #MySecureVar:
+     # secure: 2miEAGV72ED32TvZbXUbQA== #This is secured
+      #MyNonSecureVar: NonSecure
+      ModuleName: XDomainControllers-Events
+  #---------------------------------# 
+  #      build configuration        # 
+  #---------------------------------# 
+  build_script: 
+    - ps: Import-Module XDomainControllers-Events
+  
+  #---------------------------------# 
+  #      test configuration         # 
+  #---------------------------------# 
+  test_script: 
+    - ps: Import-Module XDomainControllers-Events
+  
+  #---------------------------------# 
+  #      deployment configuration   # 
+  #---------------------------------# 
+  deploy_script: 
+    - ps: Import-Module XDomainControllers-Events
