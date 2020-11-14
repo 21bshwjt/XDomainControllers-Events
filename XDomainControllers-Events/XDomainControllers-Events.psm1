@@ -3,7 +3,7 @@ Import-Module XDomainControllers-Events -force
 gcm -Module XDomainControllers-Events
 Get-Xhunt-Lockout | Export-Csv -Path C:\Temp\Lockoutevent.csv -NoTypeInformation
 #>
-Function Get-Xhunt-Ntlm {
+Function Get-XhuntNtlm {
   $getadcs = (Get-ADGroupMember 'Domain Controllers').Name
   $ErrorActionPreference = "SilentlyContinue"
   Invoke-Command -ComputerName $getadcs -ScriptBlock {
@@ -27,7 +27,7 @@ Function Get-Xhunt-Ntlm {
   } | Select-Object -Property @{Name = "DomainController"; Expression = { $_.PSComputerName } }, AuthenticationPackageName, TargetUserName, IpAddress | 
   Where-Object AuthenticationPackageName -EQ "ntlm"
 }
-Function Get-Xhunt-RC4 {
+Function Get-XhuntRC4 {
   $getadcs = (Get-ADGroupMember 'Domain Controllers').Name
   $ErrorActionPreference = "SilentlyContinue"
   Invoke-Command -ComputerName $getadcs -ScriptBlock {
@@ -51,7 +51,7 @@ Function Get-Xhunt-RC4 {
   } | Select-Object -Property @{Name = "DomainController"; Expression = { $_.PSComputerName } }, TargetUserName, @{Name = "KerbType"; Expression = { $_.TicketEncryptionType } } , IpAddress, Status, TicketOptions | Where-Object KerbType -EQ "0x17"
 
 }
-Function Get-Xhunt-AES {
+Function Get-XhuntAES {
   $getadcs = (Get-ADGroupMember 'Domain Controllers').Name
   $ErrorActionPreference = "SilentlyContinue"
   Invoke-Command -ComputerName $getadcs -ScriptBlock {    
@@ -75,7 +75,7 @@ Function Get-Xhunt-AES {
 
 }
 
-Function Get-Xhunt-Uptime {
+Function Get-XhuntUptime {
   $ErrorActionPreference = "Stop" 
   $computername = (Get-ADGroupMember 'Domain Controllers').Name
   # use DCOM for older systems that do not run with WinRM remoting
@@ -109,7 +109,7 @@ Function Get-Xhunt-Uptime {
   $Uptimeobj | Sort-Object Uptime_Day -Descending
   #Write-Host "Total $($Uptimeobj.count)"
 }
-Function Get-Xhunt-Lockout {
+Function Get-XhuntLockout {
   $getadcs = [system.directoryservices.activedirectory.domain]::GetCurrentDomain().DomainControllers.Name
   $ErrorActionPreference = "SilentlyContinue"
   Invoke-Command -ComputerName $getadcs -ScriptBlock {
@@ -132,7 +132,7 @@ Function Get-Xhunt-Lockout {
   } | Select-Object -Property @{Name = "ADC"; Expression = { $_.PSComputerName } }, TargetUserName, IpAddress, Status, FailureReason, SubStatus, LogonType
 } 
 
-Function Get-Xhunt-WUdate {
+Function Get-XhuntWUdate {
   $getadcs = (Get-ADGroupMember 'Domain Controllers').Name
   $ErrorActionPreference = "SilentlyContinue"
   Invoke-Command -ComputerName $GetADCs -ScriptBlock { Get-HotFix | Select-Object -Last 1 } | 
