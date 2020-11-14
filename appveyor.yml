@@ -4,6 +4,7 @@
   version: 1.1.{build}
   os: WMF 5
   install:
+    - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
     - ps: Import-Module XDomainControllers-Events
   
   environment:
@@ -15,16 +16,19 @@
   #      build configuration        # 
   #---------------------------------# 
   build_script: 
+    - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
     - ps: Import-Module XDomainControllers-Events
   
   #---------------------------------# 
   #      test configuration         # 
   #---------------------------------# 
   test_script: 
+    - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
     - ps: Import-Module XDomainControllers-Events
   
   #---------------------------------# 
   #      deployment configuration   # 
   #---------------------------------# 
   deploy_script: 
+    - ps: Set-Location C:\projects\XDomainControllers-Events\XDomainControllers-Events
     - ps: Import-Module XDomainControllers-Events
