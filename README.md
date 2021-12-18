@@ -1,4 +1,4 @@
-### Hunt Weaker Cipher & Weaker Authentication Protocol
+### Hunt Weaker Cipher & Weaker Authentication Protocol-PowerShell
 1. Get Lockout ,NTLM , RC4, AES , DC Uptime & Last Patching Date.
 2. Code is worked on WinRM & AD Module is required .
 
