@@ -5,5 +5,9 @@
 **Use-case**
 Get Weaker Cipher (RC4) & Weaker Authentication Protocol (NTLM) events from Domain Controllers.  
 
+**Description**
+The script runs on Domain Controllers & Domain Admin privilege is needed to run that. 
+
+
 
 
