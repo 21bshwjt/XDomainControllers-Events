@@ -4,8 +4,13 @@
 + The code is designed to work with WinRM and requires the Active Directory (AD) module.
 ```
 
-### Use-case
-Get Weaker Cipher (RC4) & Weaker Authentication Protocol (NTLM) events from Domain Controllers.  
+### Use-cases
+- Get the sources of AES
+- Get the sources of NTLM
+- Get the sources of RC4
+- Get the sources of Account Lockout
+- Get Domain Controllers Uptime
+- Get Domain Controllers last patching date
 
 ### Note
 The script runs on Domain Controllers & Domain Admin privilege is needed to run that. 
