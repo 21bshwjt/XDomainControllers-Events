@@ -12,8 +12,8 @@ The script runs on Domain Controllers & Domain Admin privilege is needed to run 
 
 ### Instructions
 ```powershell
-Install-Module -Name XDomainControllers-Events -RequiredVersion 1.3 -Force -Verbose -Repository PSGallery
-Import-Module XDomainControllers-Events -Verbose
+C:\> Install-Module -Name XDomainControllers-Events -RequiredVersion 1.3 -Force -Verbose -Repository PSGallery
+C:\> Import-Module XDomainControllers-Events -Verbose
 C:\> Get-Command -Module XDomainControllers-Events
 
 CommandType     Name                                               Version    Source
