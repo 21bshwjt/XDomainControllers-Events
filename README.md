@@ -10,6 +10,22 @@ Get Weaker Cipher (RC4) & Weaker Authentication Protocol (NTLM) events from Doma
 ### Note
 The script runs on Domain Controllers & Domain Admin privilege is needed to run that. 
 
+### Instructions
+```powershell
+Install-Module -Name XDomainControllers-Events -RequiredVersion 1.3 -Force -Verbose -Repository PSGallery
+Import-Module XDomainControllers-Events -Verbose
+C:\> Get-Command -Module XDomainControllers-Events
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-XhuntAES                                       1.3        XDomainControllers-Events
+Function        Get-XhuntLockout                                   1.3        XDomainControllers-Events
+Function        Get-XhuntNtlm                                      1.3        XDomainControllers-Events
+Function        Get-XhuntRC4                                       1.3        XDomainControllers-Events
+Function        Get-XhuntUptime                                    1.3        XDomainControllers-Events
+Function        Get-XhuntWUdate                                    1.3        XDomainControllers-Events
+```
+
 
 
 
