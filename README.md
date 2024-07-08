@@ -1,11 +1,13 @@
 ## Hunt Weaker Cipher & Weaker Authentication Protocols using PowerShell
-- Get Lockout ,NTLM , RC4, AES , DC Uptime & Last Patching Date.
-- Code is worked on WinRM & AD Module is required.
+```diff
++ Get Lockout ,NTLM , RC4, AES , Domain Controllers Uptime & Last Patching Date.
++ The code is designed to work with WinRM and requires the Active Directory (AD) module.
+```
 
-**Use-case**
+### Use-case
 Get Weaker Cipher (RC4) & Weaker Authentication Protocol (NTLM) events from Domain Controllers.  
 
-**Description**
+### Note
 The script runs on Domain Controllers & Domain Admin privilege is needed to run that. 
 
 
